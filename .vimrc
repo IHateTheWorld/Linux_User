@@ -6,7 +6,6 @@ set history=1000000
 set tabstop=4
 set shiftwidth=4
 set smarttab
-set expandtab
 set cindent
 
 colo evening
