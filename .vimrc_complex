@@ -1,0 +1,125 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Vundle """"""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-latex/vim-latex'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+">>>Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+">>> Plugin 'L9'
+" Git plugin not hosted on GitHub
+">>> Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+">>> Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+">>> Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+">>> Plugin 'ascenator/L9', {'name': 'newL9'}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" BASIC """""""""""""""""""""""""""""""""""""""""""""""""""""""
+set backspace=indent,eol,start
+set nu
+set history=1000
+set smartindent
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set smarttab
+syntax on
+"set cursorline
+set showcmd
+set nofoldenable
+
+set mouse=a
+map <F6> :call CR()<CR>
+func! CR()
+exec "w"
+exec "!gcc % -o %<"
+exec "!./%<"
+exec "!rm ./%<"
+endfunc
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" YouCompletMe """"""""""""""""""""""""""""""""""""""""""""""""""""
+if !empty(glob("~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"))
+    let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+endif
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_collect_identifiers_from_comments_and_strings = 0
+let g:ycm_min_num_of_chars_for_completion = 2
+let g:ycm_error_symbol = 'ER'
+let g:ycm_warning_symbol = 'WA'
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<S-TAB>', '<Up>']
+let g:ycm_complete_in_comments = 1
+let g:ycm_complete_in_strings = 1
+"let g:ycm_key_invoke_completion = '<C-Space>'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" NERDTree """"""""""""""""""""""""""""""""""""""""""""""""""""
+"autocmd vimenter * NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+map <C-n> :NERDTreeToggle<CR>
+map <C-F1> :NERDTreeFind<CR>
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '-'
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeShowBookmarks = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" vim-airline """"""""""""""""""""""""""""""""""""""""""""""""""""
+set laststatus=2
+set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 13
+let g:airline_powerline_fonts = 1
+let g:airline_theme='molokai'
+let g:airline_section_b = '%{strftime("%c")}'
+let g:airline_section_y = 'BN: %{bufnr("%")}'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+nnoremap <C-tab> :bn<CR>
+nnoremap <C-s-tab> :bp<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" vim-latex """"""""""""""""""""""""""""""""""""""""""""""""""""
+filetype on
+filetype indent on
+filetype plugin on
+set shellslash
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor='latex'
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_CompileRule_pdf = 'xelatex -src-specials -synctex=1 -interaction=nonstopmode $*'
+let g:Tex_ViewRule_pdf = 'okular'
+let g:Tex_UseEditorSettingInDVIViewer = 1
+let g:Tex_UseMakefile = 0
