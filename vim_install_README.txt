@@ -21,3 +21,15 @@ cd vim/
             --prefix=/usr
 make VIMRUNTIMEDIR=/usr/share/vim/vim80
 make install
+
+./configure --with-features=huge \
+            --enable-multibyte \
+            --enable-rubyinterp=yes \
+            --enable-pythoninterp=yes \
+            --with-python-config-dir=/usr/lib/python2.7/config \
+            --enable-python3interp=yes \
+            --with-python3-config-dir=/usr/local/python3.5/lib/python3.5/config-3.5m \
+            --enable-perlinterp=yes \
+            --enable-luainterp=yes \
+            --enable-gui=gtk2 --enable-cscope \
+            --prefix=/usr
