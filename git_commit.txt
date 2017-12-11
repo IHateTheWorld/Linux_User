@@ -1,0 +1,5 @@
+git add .
+git commit -m "xxx"
+git commit --amend
+git status
+git push origin master:master
