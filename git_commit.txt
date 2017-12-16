@@ -1,3 +1,7 @@
+git branch -a
+git checkout -b <_LOCAL_> <_REMOTE_>
+git stash
+git pull --rebase
 git add .
 git commit -m "xxx"
 git commit --amend
