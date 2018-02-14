@@ -1,3 +1,4 @@
+git config --global core.editor vim
 git branch -a
 git checkout -b <_LOCAL_> <_REMOTE_>
 git stash

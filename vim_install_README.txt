@@ -1,3 +1,9 @@
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+Add and edit ~/.vimrc
+Install Plugins:
+    Launch vim and run :PluginInstall
+    To install from command line: vim +PluginInstall +qall
+
 sudo apt-get install python3
 
 sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \
@@ -90,6 +96,30 @@ Answer: Update gcc to version 4.9.4
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
     make //try make -j4, speed up
     sudo make install
+
+Question:
+    The following languages will be built: c,c++,fortran,java,lto,objc
+    *** This configuration is not supported in the following subdirectories:
+         gnattools target-libada target-libgo target-libbacktrace
+        (Any other directories should still work fine.)
+    checking for default BUILD_CONFIG... bootstrap-debug
+    checking for --enable-vtable-verify... no
+    /usr/bin/ld: cannot find crt1.o: No such file or directory
+    /usr/bin/ld: cannot find crti.o: No such file or directory
+    /usr/bin/ld: skipping incompatible /usr/lib/gcc/x86_64-linux-gnu/4.6/libgcc.a when searching for -lgcc
+    /usr/bin/ld: cannot find -lgcc
+    /usr/bin/ld: skipping incompatible /usr/lib/gcc/x86_64-linux-gnu/4.6/libgcc_s.so when searching for -lgcc_s
+    /usr/bin/ld: cannot find -lgcc_s
+    /usr/bin/ld: cannot find -lc
+    /usr/bin/ld: skipping incompatible /usr/lib/gcc/x86_64-linux-gnu/4.6/libgcc.a when searching for -lgcc
+    /usr/bin/ld: cannot find -lgcc
+    /usr/bin/ld: skipping incompatible /usr/lib/gcc/x86_64-linux-gnu/4.6/libgcc_s.so when searching for -lgcc_s
+    /usr/bin/ld: cannot find -lgcc_s
+    /usr/bin/ld: cannot find crtn.o: No such file or directory
+    collect2: ld returned 1 exit status
+    configure: error: I suspect your system does not have 32-bit developement libraries (libc and headers). If you have them, rerun configure with --enable-multilib. If you do not have them, and want to build a 64-bit-only compiler, rerun configure with --disable-multilib.
+Answer:
+    sudo apt-get install gcc-multilib
 
 Question: Disk has no space
 Answer: VBOX UBUNTU-VM
