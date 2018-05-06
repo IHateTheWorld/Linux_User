@@ -59,9 +59,11 @@ set tabstop=4
 set shiftwidth=4
 set smarttab
 syntax on
-"set cursorline
+set cursorline
 set showcmd
 set nofoldenable
+set hls
+set incsearch
 
 set mouse=a
 map <F6> :call CR()<CR>
