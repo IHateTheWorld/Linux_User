@@ -64,6 +64,7 @@ set showcmd
 set nofoldenable
 set hls
 set incsearch
+set guifont=Monospace\ Bold\ 11
 
 set mouse=a
 map <F6> :call CR()<CR>
@@ -102,7 +103,7 @@ let g:NERDTreeShowBookmarks = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""" vim-airline """"""""""""""""""""""""""""""""""""""""""""""""""""
 set laststatus=2
-set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 13
+"set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 13
 let g:airline_powerline_fonts = 1
 let g:airline_theme='molokai'
 let g:airline_section_b = '%{strftime("%c")}'
