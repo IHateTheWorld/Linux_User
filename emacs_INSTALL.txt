@@ -1,0 +1,33 @@
+url: http://mirrors.ustc.edu.cn/gnu/emacs/
+
+# sudo apt-get install libjpeg62-dev
+# sudo apt-get install libgif-dev
+# sudo sudo apt-get install libtiff4-dev
+
+问题：
+apt-get install时出现0% [正在等待报头]
+解决：
+由于之前安装的时候Ctrl-C导致的，把/var/cache/apt/archives下的文件删除。
+
+# tar -xvf emacs-24.5.tar.gz
+# ./configure
+# make
+# sudo make install
+
+12.04源列表（网易）：
+deb http://mirrors.163.com/ubuntu/ precise main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ precise-security main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ precise-updates main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ precise-backports main restricted universe multiverse
+##測試版源
+deb http://mirrors.163.com/ubuntu/ precise-proposed main restricted universe multiverse
+# 源碼
+deb-src http://mirrors.163.com/ubuntu/ precise main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ precise-security main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ precise-updates main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ precise-backports main restricted universe multiverse
+##測試版源
+deb-src http://mirrors.163.com/ubuntu/ precise-proposed main restricted universe multiverse
+# Canonical 合作夥伴和附加
+deb http://archive.canonical.com/ubuntu/ precise partner
+deb http://extras.ubuntu.com/ubuntu/ precise main

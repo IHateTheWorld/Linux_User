@@ -66,6 +66,8 @@ set nofoldenable
 set hls
 set incsearch
 set guifont=Monospace\ Bold\ 11
+set guioptions-=T
+set guioptions-=m
 
 set mouse=a
 map <F6> :call CR()<CR>
