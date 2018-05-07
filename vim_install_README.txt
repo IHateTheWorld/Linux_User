@@ -157,3 +157,19 @@ Answer: Because gcc is 4.6 and g++ is 4.9
     sudo ln -s /usr/local/bin/gcc /usr/bin/gcc
     sudo rm /usr/bin/g++
     sudo ln -s /usr/local/bin/g++ /usr/bin/g++
+
+Question: Full Screen
+Answer:
+    sudo pacman -S wmctrl
+    sudo vim .vimrc
+        function! MaximizeWindow()
+            silent !wmctrl -r :ACTIVE: -b add,maximized_vert,maximized_horz
+        endfunction
+
+        if has('win32')
+            au GUIEnter * simalt ~x
+        else
+            au GUIEnter * call MaximizeWindow()
+        endif
+
+
