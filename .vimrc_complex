@@ -59,6 +59,7 @@ set tabstop=4
 set shiftwidth=4
 set smarttab
 syntax on
+colorscheme desert
 set cursorline
 set cursorcolumn
 set showcmd
@@ -116,7 +117,6 @@ let g:NERDTreeShowBookmarks = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""" vim-airline """"""""""""""""""""""""""""""""""""""""""""""""""""
 set laststatus=2
-"set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 13
 let g:airline_powerline_fonts = 1
 let g:airline_theme='molokai'
 let g:airline_section_b = '%{strftime("%c")}'
