@@ -172,4 +172,19 @@ Answer:
             au GUIEnter * call MaximizeWindow()
         endif
 
+Question:
+    Can't find the CMakeList.txt in third_party/ycmd/third_party/cregex
+Answer:
+    sudo rm -r third_party/ycmd/third_party/cregex
+    git submodule update --init --recursive
+
+Question:
+    Traceback (most recent call last):
+    File "/home/cchhit/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/server_utils.py", line 96, in CompatibleWithCurrentCore
+    ycm_core = ImportCore()
+    File "/home/cchhit/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/server_utils.py", line 88, in ImportCore
+    import ycm_core as ycm_core
+    ImportError: libtinfo.so.5: cannot open shared object file: No such file or directory
+Answer:
+    TODO, may be this is not a problem!
 
