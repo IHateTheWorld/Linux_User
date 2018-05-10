@@ -188,3 +188,13 @@ Question:
 Answer:
     TODO, may be this is not a problem!
 
+Question:
+    airline has the display problem on the botton
+Answer:
+    sudo mkdir ~/.fonts
+    cd ~/.fonts
+    git clone https://github.com/powerline/fonts
+    cd fonts
+    ./install.sh
+
+
