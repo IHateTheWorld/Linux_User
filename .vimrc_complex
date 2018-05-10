@@ -62,6 +62,8 @@ syntax on
 colorscheme desert
 set cursorline
 set cursorcolumn
+highlight CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+highlight CursorColumn cterm=NONE ctermbg=grey    ctermfg=white guibg=grey    guifg=white
 set showcmd
 set nofoldenable
 set hls
