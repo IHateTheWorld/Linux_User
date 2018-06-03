@@ -61,7 +61,7 @@ set smarttab
 syntax on
 colorscheme desert
 set cursorline
-set cursorcolumn
+"set cursorcolumn
 highlight CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 highlight CursorColumn cterm=NONE ctermbg=grey    ctermfg=white guibg=grey    guifg=white
 set showcmd
@@ -71,6 +71,8 @@ set incsearch
 set guifont=Monospace\ Bold\ 11
 set guioptions-=T
 set guioptions-=m
+
+set linespace=2
 
 set mouse=a
 map <F6> :call CR()<CR>
