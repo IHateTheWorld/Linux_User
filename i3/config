@@ -164,7 +164,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-for_window [class="URxvt"] layout tabbed
+# for_window [class="URxvt"] layout tabbed
 
 assign [class="Gvim"] $WS2
 assign [class="Emacs"] $WS3
