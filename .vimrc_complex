@@ -60,7 +60,7 @@ set shiftwidth=4
 set smarttab
 syntax on
 colorscheme desert
-set cursorline
+"set cursorline
 "set cursorcolumn
 highlight CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 highlight CursorColumn cterm=NONE ctermbg=grey    ctermfg=white guibg=grey    guifg=white
@@ -68,7 +68,7 @@ set showcmd
 set nofoldenable
 set hls
 set incsearch
-set guifont=Monospace\ Bold\ 11
+set guifont=Monospace\ Bold\ 10
 set guioptions-=T
 set guioptions-=m
 
@@ -92,6 +92,23 @@ if has('win32')
 else
     au GUIEnter * call MaximizeWindow()
 endif
+
+inoremap ( ()<ESC>i
+inoremap ) <c-r>=ClosePair(')')<CR>
+" "inoremap { {<CR>}<ESC>O
+inoremap { {}<ESC>i
+inoremap } <c-r>=ClosePair('}')<CR>
+inoremap [ []<ESC>i
+inoremap ] <c-r>=ClosePair(']')<CR>
+inoremap " ""<ESC>i
+inoremap ' ''<ESC>i
+function! ClosePair(char)
+    if getline('.')[col('.') - 1] == a:char
+        return "\<Right>"
+    else
+        return a:char
+    endif
+endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""" YouCompletMe """"""""""""""""""""""""""""""""""""""""""""""""""""
 if !empty(glob("~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"))
